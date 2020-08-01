@@ -12,12 +12,20 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "json-server": "json-server --watch db.json --port 5000",
+    "dev": "concurrently \"npm start\" \"npm run json-server\"",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": "react-app"
+  },
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
   },
   "browserslist": {
     "production": [
@@ -30,5 +38,11 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "json-server": "^0.16.1",
+    "prettier": "2.0.5"
+  },
+  "proxy": "http://localhost:5000"
 }
