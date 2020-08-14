@@ -18,7 +18,7 @@ export const Logs = () => {
 
     setLogs(data);
     setLoading(false);
-  }
+  };
 
   if (loading) {
     return <Preloader />;
@@ -32,7 +32,7 @@ export const Logs = () => {
       {!loading && logs.length === 0 ? (
       <p className='center'> No logs to show... </p>
       ) : (
-        logs.map(log => <LogItem log={log} key={log.id}/>)
+        logs.map(log => <LogItem log={log} key={log.id} />)
       )}
     </ul>
   );
