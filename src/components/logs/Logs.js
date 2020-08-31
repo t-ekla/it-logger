@@ -5,7 +5,7 @@ import Preloader from '../layout/Preloader'
 import PropTypes from 'prop-types';
 import { getLogs } from '../../actions/logActions';
 
-export const Logs = ({ log: { logs, loading }}) => {
+export const Logs = ({ log: { logs, loading }, getLogs }) => {
   
 
   useEffect(() => {
@@ -13,7 +13,7 @@ export const Logs = ({ log: { logs, loading }}) => {
     // es-lint-disable-next-line
   }, []);
 
-  if (loading) {
+  if (loading || logs === null ) {
     return <Preloader />;
   }
 
